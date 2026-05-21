@@ -50,7 +50,7 @@ console.log(employee);
 
 //Bài 7
 let school = {
-   classA: ["An","Bình","Châu"],
+   classA: ["An", "Bình", "Châu"],
    classB: ["Đào", "Hương", "Giang"]
 }
-console.log (school);
+console.log(school);
