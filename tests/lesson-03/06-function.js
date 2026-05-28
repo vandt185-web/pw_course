@@ -35,4 +35,4 @@ getTopStudents(student, 7);
 function calcualateInterest(principal, rate, years) {
     return total = principal + principal * rate * years / 100;
 }
-console.log(calcualateInterest(10000000, 5, 2));
+console.log(calcualateInterest(10_000_000, 5, 2));
