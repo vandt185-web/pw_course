@@ -125,3 +125,40 @@ test ('Basic action', async ({ page}) => {
     });
 });
 ```
+## Phần 4: Kiến thức bổ sung
+### 1. Tương tác với dialog confirm
+```
+test('confirmation', async({page}) => {
+  await page.goto('https://material.playwrightvn.com');
+  await page.click("//a[@href='03-xpath-todo-list.html']");
+
+
+  await page.locator("//input[@id='new-task']").fill("dovan");
+  await page.click("//button[@id='add-task']");
+ 
+  page.on('dialog', async dialog => dialog.accept());
+  await page.click("//button[text()='Delete']");
+}
+```
+### 2. Hover
+Để hover vào phần tử ta dùng hàm hover sau:
+```
+await page.locator("<xpath here>").hover();
+```
+### 3. Text()
+Hàm text() dùng để tìm ra những phần tử có giá trị tương ứng
+ví dụ với DOM sau:
+```
+<div @class="playwright">This is a text</div>
+```
+Để chọn phần tử trên, ta dùng cú pháp như sau
+```
+//div[text()='This is a text']
+```
+### 4. Contains()
+Đôi khi trong html, phần tử có thể thừa khoảng trắng hoặc giá trị không ổn định. Để chọn các phần tử này ta dùng hàm contains
+```
+contains(<giá trị>,<giá trị contains>)
+VD: xpath: //div[contains(text(),'tôi là a')]
+```
+
