@@ -1,6 +1,6 @@
-import { test} from '@playwright/test';
+import { test } from '@playwright/test';
 
-test('register', async ({ page }) => {
+test('bai1', async ({ page }) => {
   await page.goto('https://material.playwrightvn.com');
   await page.locator("//a[text()='Bài học 1: Register Page (có đủ các element)']").click();
   await page.locator("//input[@id='username']").fill("dovan");
@@ -18,5 +18,6 @@ test('register', async ({ page }) => {
   await page.locator("//input[@id='favcolor']").fill("#30e834");
   await page.locator("//span[@class='slider round']").setChecked(true);
   //await page.locator("//div[@class='rating-star']").click();
-  await page.locator("//input[@id='customDate']").fill("2026-05-28");
+  //await page.locator("//input[@id='customDate']").fill("2026-05-28");
+  await page.locator("//button[@type ='submit']").click();
 });
